@@ -107,6 +107,8 @@
             Background="#3FFFFFFF" 
             BorderBrush="#3FABADB3"
             Content="Зарегистрироваться"
+            Command="{Binding RegNewUser}"
+            CommandParameter="{Binding ElementName=PasswordR}"
             />
     </Grid>
 </Window>

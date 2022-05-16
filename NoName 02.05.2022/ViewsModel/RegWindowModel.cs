@@ -1,11 +1,16 @@
 ﻿using NoName_02._05._2022.Command;
+using NoName_02._05._2022.Views;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace NoName_02._05._2022.ViewsModel
 {
@@ -16,6 +21,10 @@ namespace NoName_02._05._2022.ViewsModel
         public event EventHandler EventCloseWindow;
 
         private BaseCommands changeToAutWindow;
+        private BaseCommands regNewUser;
+
+        private string newUserLogin;
+        private string newUserEmail;
 
         public BaseCommands ChangeToAutWindow
         {
@@ -28,6 +37,62 @@ namespace NoName_02._05._2022.ViewsModel
                 }));
             }
         }
+
+        public BaseCommands RegNewUser
+        {
+            get
+            {
+                return regNewUser ?? (regNewUser = new BaseCommands(obj =>
+                {
+                    string prPath = @"D:\Подгорный Владислав\MyFirstProject-master\NoName 02.05.2022\CarStoreDB.mdf";
+                    string strCon = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={prPath};Integrated Security=True";
+                    using (SqlConnection con = new SqlConnection(strCon))
+                    {
+                        PasswordBox pb = (PasswordBox)obj;
+                        string password = pb.Password;
+                        SqlCommand checkUser = new SqlCommand(@"SELECT * FROM [Users] WHERE CONVERT(VARCHAR, UserName) = '{newUserLogin}'", con);
+                        con.Open();
+                        using (SqlDataReader dr = checkUser.ExecuteReader())
+                        {
+                            if (dr.Read() && (string)dr.GetValue(1) == newUserLogin)
+                            {
+                                MessageBox.Show("Такой профиль уже существует!");
+                            }
+                            else
+                            {
+                                if (LoginData.CheckLogin(newUserLogin) &&
+                                LoginData.CheckEmail(newUserEmail) &&
+                                LoginData.CheckPassword(password))
+                                {
+                                    string sqlExpression = @"INSERT INTO [Users](UserName, UserEmail, UserPassword)" + $"VALUES('{newUserLogin}', '{newUserEmail}', '{password}')";
+                                    SqlCommand command = new SqlCommand(sqlExpression, con);
+                                    command.ExecuteNonQuery();
+                                    MessageBox.Show("Запись создана!");
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Данные введены неверно!");
+                                }
+                            }
+                        }
+                        con.Close();
+                    }
+                }));
+            }
+        }
+
+        public string NewUserLogin
+        {
+            get { return newUserLogin; }
+            set { newUserLogin = value; OnPropertyChanged("NewUserLogin"); }
+        }
+
+        public string NewUserEmail
+        {
+            get { return newUserEmail; }
+            set { newUserEmail = value; OnPropertyChanged("NewUserLogin"); }
+        }
+
         public void OnPropertyChanged([CallerMemberName] string prop = "")
         {
             if (PropertyChanged != null)
@@ -37,84 +102,5 @@ namespace NoName_02._05._2022.ViewsModel
         }
 
         public void CloseWindow() => EventCloseWindow?.Invoke(this, EventArgs.Empty);
-
-
-
-        /*private void RegButton_Click(object sender, RoutedEventArgs e)
-        {
-            string login = userName.Text;
-            string email = userEmail.Text;
-            string password1 = userPassword.Password;
-            string password2 = repiteUserPassword.Password;
-            bool dataCorrect = true;
-
-            Regex regexLog = new Regex(@"^[\w\d!*]{1,15}$");
-            Regex regexPas = new Regex(@"^[\w\d\-_!*$#]{5,25}$");
-            Regex regexEmail = new Regex(@"^[\w\d\._\-]{3,20}@[\w\d]{3,6}\.[\w]{2,3}$");
-
-            if (regexLog.IsMatch(login))
-            {
-                userName.Foreground = Brushes.Green;
-            }
-            else
-            {
-                userName.Foreground = Brushes.Red;
-                dataCorrect = false;
-            }
-
-            if (regexEmail.IsMatch(email))
-            {
-                userEmail.Foreground = Brushes.Green;
-            }
-            else
-            {
-                userEmail.Foreground = Brushes.Red;
-                dataCorrect = false;
-            }
-
-            if (regexPas.IsMatch(password1))
-            {
-                userPassword.Foreground = Brushes.Green;
-            }
-            else
-            {
-                userPassword.Foreground = Brushes.Red;
-                dataCorrect = false;
-            }
-
-            if (regexPas.IsMatch(password2))
-            {
-                repiteUserPassword.Foreground = Brushes.Green;
-            }
-            else
-            {
-                repiteUserPassword.Foreground = Brushes.Red;
-                dataCorrect = false;
-            }
-
-            if(password1 != password2)
-            {
-                userPassword.Foreground = Brushes.Red;
-                repiteUserPassword.Foreground = Brushes.Red;
-                dataCorrect = false;
-            }
-
-            if(dataCorrect)
-            {
-                string sqlExpression = @"INSERT INTO [users](login, password, email)" + $"VALUES('{userName.Text}', '{userPassword.Password}', '{userEmail.Text}')";
-                SqlCommand command = new SqlCommand(sqlExpression, workshopDB.con);
-                command.ExecuteNonQuery();
-                MessageBox.Show("Запись создана!");
-
-            }
-        }
-
-        private void EnterBut_Click(object sender, RoutedEventArgs e)
-        {
-            Autorizationxaml autorization = new Autorizationxaml();
-            autorization.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            autorization.Show();
-            this.Close();
-        }*/
     }
 }

@@ -43,7 +43,7 @@ namespace NoName_02._05._2022.ViewsModel
                     prPath = System.IO.Directory.GetParent(prPath).FullName;
                     prPath = System.IO.Directory.GetParent(prPath).FullName;
                     prPath = System.IO.Directory.GetParent(prPath).FullName;
-                    string strCon = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename= {prPath}\CarStoreDB.mdf; Integrated Security = True";
+                    string strCon = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={prPath};Integrated Security=True";
                     using (SqlConnection con = new SqlConnection(strCon))
                     {
                         SqlCommand com = new SqlCommand("SELECT * FROM Cars", con);
@@ -57,6 +57,8 @@ namespace NoName_02._05._2022.ViewsModel
             }
         }
 
+        
+
         public void OnPropertyChanged([CallerMemberName] string prop = "")
         {
             if (PropertyChanged != null)
@@ -68,15 +70,7 @@ namespace NoName_02._05._2022.ViewsModel
         public void CloseWindow() => EventCloseWindow?.Invoke(this, EventArgs.Empty);
 
 
-        /*private void ButToReg_Click(object sender, RoutedEventArgs e)
-        {
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            mainWindow.Show();
-            this.Close();
-        }
-
-        private void Enter_Click(object sender, RoutedEventArgs e)
+        /*private void Enter_Click(object sender, RoutedEventArgs e)
         {
             string sqlExpression = @"SELECT * FROM [users]" + $"WHERE CONVERT(VARCHAR, login) = '{enterUserLogin.Text}'" + $"AND CONVERT(VARCHAR, password) = '{enterUserPassword.Password}'";
 

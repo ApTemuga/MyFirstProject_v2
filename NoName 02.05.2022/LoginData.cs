@@ -18,18 +18,30 @@ namespace NoName_02._05._2022
 
         public static bool CheckLogin(string loginString)
         {
+            if (string.IsNullOrEmpty(loginString))
+            {
+                return false;
+            }
             Regex rx = new Regex(@"^[a-zA-Z0-9-_]{3,32}$");
             return rx.IsMatch(loginString);
         }
 
         public static bool CheckPassword(string passwordString)
         {
+            if (string.IsNullOrEmpty(passwordString))
+            {
+                return false;
+            }
             Regex rx = new Regex(@"^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])[0-9A-z!@#$%^&*]{6,}");
             return rx.IsMatch(passwordString);
         }
 
         public static bool CheckEmail(string emailString)
         {
+            if (string.IsNullOrEmpty(emailString))
+            {
+                return false;
+            }
             Regex rx = new Regex(@"^((([0-9A-z]{1}[-0-9A-z\.]{0,30}[0-9A-z]?)|([0-9A-zА-я]{1}[-0-9A-zА-я\.]{0,30}[0-9A-zА-я]?))@([-A-Za-z]{1,}\.){1,}[-A-Za-z]{2,})$");
             return rx.IsMatch(emailString);
         }

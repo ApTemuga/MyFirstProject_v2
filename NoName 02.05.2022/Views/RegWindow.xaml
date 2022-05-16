@@ -1,0 +1,112 @@
+﻿<Window x:Class="NoName_02._05._2022.Views.RegWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NoName_02._05._2022.Views"
+        mc:Ignorable="d"
+        Title="RegWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="{StaticResource RegBackgr}"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="55*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="70*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="80*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20*"/>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="210*"/>
+        </Grid.ColumnDefinitions>
+        <TextBox x:Name="LoginR"
+            Grid.Column="1"
+            Grid.ColumnSpan="5"
+            Grid.Row="1"
+            FontSize="20" 
+            Background="#3FFFFFFF" 
+            BorderBrush="#3FABADB3"
+            />
+        <TextBox x:Name="EmailR"
+            Grid.Column="1"
+            Grid.ColumnSpan="5"
+            Grid.Row="3"
+            FontSize="20" 
+            Background="#3FFFFFFF" 
+            BorderBrush="#3FABADB3"
+            />
+        <PasswordBox x:Name="PasswordR"
+            Grid.Column="1"
+            Grid.ColumnSpan="5"
+            Grid.Row="5"
+            FontSize="20" 
+            Background="#3FFFFFFF" 
+            BorderBrush="#3FABADB3"
+            />
+        <PasswordBox x:Name="RepitePasswordR"
+            Grid.Column="1"
+            Grid.ColumnSpan="5"
+            Grid.Row="7"
+            FontSize="20" 
+            Background="#3FFFFFFF" 
+            BorderBrush="#3FABADB3"
+            />
+        <Label x:Name="lLoginR"
+            Grid.Column="3"
+            Content="Логин"
+            FontSize="20"
+            Margin="17,15,0,0"
+            />
+        <Label x:Name="lEmailR"
+            Grid.Column="3"
+            Grid.Row="2"
+            Content="Почта"
+            FontSize="15"
+            Margin="20,-5,0,0"
+            />
+        <Label x:Name="lPasswordR"
+            Grid.Column="3"
+            Grid.Row="4"
+            Content="Пароль"
+            FontSize="15"
+            Margin="20,-5,0,0"
+            />
+        <Label x:Name="lRepitePasswordR"
+            Grid.Column="3"
+            Grid.Row="6"
+            Content="Повторите пароль"
+            FontSize="15"
+            Margin="-20,-5,-20,0"
+            />
+        <Button x:Name="ToAutButtonR"
+            Grid.Column="1"
+            Grid.ColumnSpan="2"
+            Grid.Row="9"
+            Background="#3FFFFFFF" 
+            BorderBrush="#3FABADB3"
+            Content="Войти"
+            Command="{Binding ChangeToAutWindow}"
+            />
+        <Button x:Name="RegButton"
+            Grid.Column="4"
+            Grid.ColumnSpan="2"
+            Grid.Row="9"
+            Background="#3FFFFFFF" 
+            BorderBrush="#3FABADB3"
+            Content="Зарегистрироваться"
+            />
+    </Grid>
+</Window>

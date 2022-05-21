@@ -7,6 +7,8 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.Windows.Controls;
+using System.Windows;
 
 namespace NoName_02._05._2022.ViewsModel
 {
@@ -19,6 +21,8 @@ namespace NoName_02._05._2022.ViewsModel
         private BaseCommands changeToRegWindow;
 
         private BaseCommands changeToStoreWindow;
+
+        private string userLogin;
 
         public BaseCommands ChangeToRegWindow
         {
@@ -38,26 +42,36 @@ namespace NoName_02._05._2022.ViewsModel
             {
                 return changeToStoreWindow ?? (changeToStoreWindow = new BaseCommands(obj =>
                 {
-                    string prPath = AppDomain.CurrentDomain.BaseDirectory;
-                    prPath = prPath.Substring(0, prPath.Length - 1);
-                    prPath = System.IO.Directory.GetParent(prPath).FullName;
-                    prPath = System.IO.Directory.GetParent(prPath).FullName;
-                    prPath = System.IO.Directory.GetParent(prPath).FullName;
+                    string prPath = @"D:\Подгорный Владислав\MyFirstProject-master\NoName 02.05.2022\CarStoreDB.mdf";
                     string strCon = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={prPath};Integrated Security=True";
                     using (SqlConnection con = new SqlConnection(strCon))
                     {
+                        PasswordBox pb = (PasswordBox)obj;
+                        string password = pb.Password;
+
                         SqlCommand com = new SqlCommand("SELECT * FROM Cars", con);
-                        using (SqlDataReader dr = com.ExecuteReader())
+                        SqlCommand checkEnter = new SqlCommand(@"SELECT * FROM [Users]" + $"WHERE CONVERT(VARCHAR, UserLogin) = '{userLogin}' AND CONVERT(VARCHAR, UserPassword) = '{password}'", con);
+
+                        using (SqlDataReader reader = checkEnter.ExecuteReader())
                         {
-                            WindowsBuilder.ShowStoreWindow();
-                            CloseWindow();
+                            if (reader.Read() && (string)reader.GetValue(1) == userLogin && (string)reader.GetValue(2) == password)
+                            {
+                                WindowsBuilder.ShowStoreWindow();
+                                CloseWindow();
+                            }
                         }
                     }
                 }));
             }
         }
 
-        
+
+        public string UserLogin
+        {
+            get { return userLogin; }
+            set { userLogin = value; OnPropertyChanged("UserLogin"); }
+        }
+
 
         public void OnPropertyChanged([CallerMemberName] string prop = "")
         {
@@ -68,26 +82,5 @@ namespace NoName_02._05._2022.ViewsModel
         }
 
         public void CloseWindow() => EventCloseWindow?.Invoke(this, EventArgs.Empty);
-
-
-        /*private void Enter_Click(object sender, RoutedEventArgs e)
-        {
-            string sqlExpression = @"SELECT * FROM [users]" + $"WHERE CONVERT(VARCHAR, login) = '{enterUserLogin.Text}'" + $"AND CONVERT(VARCHAR, password) = '{enterUserPassword.Password}'";
-
-            SqlCommand cmd = new SqlCommand(sqlExpression, MainWindow.workshopDB.con);
-            using (SqlDataReader reader = cmd.ExecuteReader())
-            {
-                if (reader.Read() && (string)reader.GetValue(1) == enterUserLogin.Text && (string)reader.GetValue(2) == enterUserPassword.Password)
-                {
-                    MainWindow.currentUser.id = (int)reader.GetValue(0);
-                    MainWindow.currentUser.login = (string)reader.GetValue(1);
-
-                    MessageBox.Show($"Добро пожаловать, {MainWindow.currentUser.login}!");
-                    
-                }
-            }
-
-               
-        }*/
     }
 }

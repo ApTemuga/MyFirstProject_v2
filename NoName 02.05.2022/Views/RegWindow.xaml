@@ -39,6 +39,7 @@
             FontSize="20" 
             Background="#3FFFFFFF" 
             BorderBrush="#3FABADB3"
+            Text="{Binding NewUserLogin, UpdateSourceTrigger=PropertyChanged}"
             />
         <TextBox x:Name="EmailR"
             Grid.Column="1"
@@ -47,6 +48,7 @@
             FontSize="20" 
             Background="#3FFFFFFF" 
             BorderBrush="#3FABADB3"
+            Text="{Binding NewUserEmail, UpdateSourceTrigger=PropertyChanged}"
             />
         <PasswordBox x:Name="PasswordR"
             Grid.Column="1"

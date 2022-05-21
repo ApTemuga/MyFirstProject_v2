@@ -48,10 +48,16 @@ namespace NoName_02._05._2022.ViewsModel
                     string strCon = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={prPath};Integrated Security=True";
                     using (SqlConnection con = new SqlConnection(strCon))
                     {
+                        bool checkCorrectB = true;
+
                         PasswordBox pb = (PasswordBox)obj;
                         string password = pb.Password;
+
                         SqlCommand checkUser = new SqlCommand(@"SELECT * FROM [Users] WHERE CONVERT(VARCHAR, UserName) = '{newUserLogin}'", con);
+                        SqlCommand checkCorrect = new SqlCommand(@"INSERT INTO [Users](UserName, UserEmail, UserPassword)" + $"VALUES('{newUserLogin}', '{newUserEmail}', '{password}')", con);
+                        
                         con.Open();
+
                         using (SqlDataReader dr = checkUser.ExecuteReader())
                         {
                             if (dr.Read() && (string)dr.GetValue(1) == newUserLogin)
@@ -60,21 +66,31 @@ namespace NoName_02._05._2022.ViewsModel
                             }
                             else
                             {
-                                if (LoginData.CheckLogin(newUserLogin) &&
-                                LoginData.CheckEmail(newUserEmail) &&
-                                LoginData.CheckPassword(password))
+                                if (LoginData.CheckLogin(newUserLogin) == true &&
+                                LoginData.CheckEmail(newUserEmail) ==true &&
+                                LoginData.CheckPassword(password) ==true)
                                 {
-                                    string sqlExpression = @"INSERT INTO [Users](UserName, UserEmail, UserPassword)" + $"VALUES('{newUserLogin}', '{newUserEmail}', '{password}')";
-                                    SqlCommand command = new SqlCommand(sqlExpression, con);
-                                    command.ExecuteNonQuery();
-                                    MessageBox.Show("Запись создана!");
+                                    checkCorrectB = true;
                                 }
                                 else
                                 {
-                                    MessageBox.Show("Данные введены неверно!");
+                                    checkCorrectB = false;
                                 }
                             }
                         }
+
+                        if (checkCorrectB)
+                        {
+                            using (SqlDataReader dr2 = checkCorrect.ExecuteReader())
+                            {
+                                MessageBox.Show("Запись создана!");
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Данные введены неверно!");
+                        }
+
                         con.Close();
                     }
                 }));
@@ -86,11 +102,10 @@ namespace NoName_02._05._2022.ViewsModel
             get { return newUserLogin; }
             set { newUserLogin = value; OnPropertyChanged("NewUserLogin"); }
         }
-
         public string NewUserEmail
         {
             get { return newUserEmail; }
-            set { newUserEmail = value; OnPropertyChanged("NewUserLogin"); }
+            set { newUserEmail = value; OnPropertyChanged("NewUserEmail"); }
         }
 
         public void OnPropertyChanged([CallerMemberName] string prop = "")

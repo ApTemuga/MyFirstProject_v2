@@ -36,6 +36,7 @@
             FontSize="20" 
             Background="#7FFFFFFF" 
             BorderBrush="#7FABADB3"
+            Text="{Binding NewUserLogin, UpdateSourceTrigger=PropertyChanged}"
             />
         <PasswordBox x:Name="PasswordA"
             Grid.Column="1"
@@ -43,7 +44,8 @@
             Grid.Row="3" 
             FontSize="20" 
             BorderBrush="#7FABADB3" 
-            Background="#7FFFFFFF"/>
+            Background="#7FFFFFFF"
+            />
         <Label x:Name="lLoginA"
             Grid.Column="3"
             Content="Логин"
@@ -72,6 +74,8 @@
             Content="Войти" 
             BorderBrush="#7F707070" 
             Background="#7FDDDDDD"
-            Command="{Binding ChangeToStoreWindow}"/>
+            Command="{Binding ChangeToStoreWindow}"
+            CommandParameter="{Binding ElementName=PasswordA}"
+            />
     </Grid>
 </Window>

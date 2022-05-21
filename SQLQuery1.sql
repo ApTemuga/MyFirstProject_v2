@@ -4,7 +4,7 @@
 	UserName nvarchar(16) NOT NULL,
 	UserEmail nvarchar(27) NOT NULL,
 	UserPassword nvarchar(20) NOT NULL,
-	CarId int NOT NULL,
+	CarId int,
 	PRIMARY KEY (Id)
 )
 GO

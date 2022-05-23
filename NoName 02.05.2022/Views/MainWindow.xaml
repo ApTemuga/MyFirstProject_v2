@@ -36,7 +36,7 @@
             FontSize="20" 
             Background="#7FFFFFFF" 
             BorderBrush="#7FABADB3"
-            Text="{Binding NewUserLogin, UpdateSourceTrigger=PropertyChanged}"
+            Text="{Binding UserLogin, UpdateSourceTrigger=PropertyChanged}"
             />
         <PasswordBox x:Name="PasswordA"
             Grid.Column="1"

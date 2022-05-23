@@ -12,7 +12,7 @@ namespace NoName_02._05._2022.Models
         public int Id { get; }
         public int Price { get; }
         public string Model { get; }
-        public List<User> Users { get; }
+        private List<User> Users { get; }
 
         public Car()
         {

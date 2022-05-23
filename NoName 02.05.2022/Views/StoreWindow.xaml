@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:NoName_02._05._2022.Views"
         mc:Ignorable="d"
         Title="StoreWindow" Height="450" Width="800">
-    <Grid x:Name="MainGrid">
+    <Grid x:Name="MainGrid" Background="#FF383737">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="220*"/>
             <ColumnDefinition Width="580*"/>
@@ -66,8 +66,8 @@
         </StackPanel>
         <ScrollViewer 
             Grid.Column="1"
-            Grid.Row="1" Background="#FF2C2C2C">
-            <DataGrid x:Name="CarsList"></DataGrid>
+            Grid.Row="1" Background="#FF171717">
+            <DataGrid x:Name="CarsList" Background="#FF464646"></DataGrid>
         </ScrollViewer>
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>

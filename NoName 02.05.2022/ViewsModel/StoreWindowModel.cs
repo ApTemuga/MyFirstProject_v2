@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using NoName_02._05._2022.Views;
 
 namespace NoName_02._05._2022.ViewsModel
 {

@@ -26,13 +26,13 @@ namespace NoName_02._05._2022.Models
             Cars = new List<Car>(0);
         }
 
-        public User(int id, string name, string email, string password, BitmapImage avatar, List<Car> list)
+        public User(int id, string name, string email, string password, /*BitmapImage avatar,*/ List<Car> list)
         {
             Id = id;
             Name = name;
             Email = email;
             Password = password;
-            Avatar = avatar;
+            //Avatar = avatar;
             Cars = list;
         }
         

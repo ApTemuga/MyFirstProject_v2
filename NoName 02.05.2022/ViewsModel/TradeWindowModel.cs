@@ -15,15 +15,15 @@ namespace NoName_02._05._2022.ViewsModel
 
         public event EventHandler EventCloseWindow;
 
-        private BaseCommands changeToAutWindow;
+        private BaseCommands changeToStoreWindow;
 
-        public BaseCommands ChangeToAutWindow
+        public BaseCommands ChangeToStoreWindow
         {
             get
             {
-                return changeToAutWindow ?? (changeToAutWindow = new BaseCommands(obj =>
+                return changeToStoreWindow ?? (changeToStoreWindow = new BaseCommands(obj =>
                 {
-                    WindowsBuilder.ShowAutWindow();
+                    WindowsBuilder.ShowStoreWindow();
                     CloseWindow();
                 }));
             }

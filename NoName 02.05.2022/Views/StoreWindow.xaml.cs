@@ -21,12 +21,11 @@ namespace NoName_02._05._2022.Views
     /// </summary>
     public partial class StoreWindow : Window
     {
-        List<Car> carList = new List<Car>();
         public StoreWindow()
         {
             InitializeComponent();
             DataContext = new StoreWindowModel();
-            CarsList.ItemsSource = carList;
+            CarsList.ItemsSource = AutWindowModel.carList;
         }
     }
 }

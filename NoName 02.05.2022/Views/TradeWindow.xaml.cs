@@ -23,7 +23,7 @@ namespace NoName_02._05._2022.Views
         public TradeWindow()
         {
             InitializeComponent();
-            DataContext = new StoreWindowModel();
+            DataContext = new TradeWindowModel();
         }
     }
 }

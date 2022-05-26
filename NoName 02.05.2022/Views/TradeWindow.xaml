@@ -27,7 +27,9 @@
         <Button x:Name="ToProfileB"
                 Grid.Column="1"
                 Grid.Row="7"
-                Content="Вернуться в окно профиля" Background="Red"
+                Content="Вернуться в окно профиля" 
+                Background="Red"
+                Command="{Binding ChangeToStoreWindow}"
         />
     </Grid>
 </Window>

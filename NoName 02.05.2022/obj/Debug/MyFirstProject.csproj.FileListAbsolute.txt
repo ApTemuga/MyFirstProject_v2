@@ -76,3 +76,33 @@ Z:\Мои документы\Влад\C#\MyFirstProject-master\NoName 02.05.2022
 Z:\Мои документы\Влад\C#\MyFirstProject-master\NoName 02.05.2022\obj\Debug\NoName 02.05.2022.pdb
 D:\Подгорный Владислав\MyFirstProject-master\NoName 02.05.2022\obj\Debug\Views\TradeWindow.g.cs
 D:\Подгорный Владислав\MyFirstProject-master\NoName 02.05.2022\obj\Debug\Views\TradeWindow.baml
+Z:\Мои документы\Влад\C#\MyFirstProject_v2\MyFirstProject_v2\MyFirstProject_v2\NoName 02.05.2022\bin\Debug\CarStoreDB.mdf
+Z:\Мои документы\Влад\C#\MyFirstProject_v2\MyFirstProject_v2\MyFirstProject_v2\NoName 02.05.2022\bin\Debug\CarStoreDB_log.ldf
+Z:\Мои документы\Влад\C#\MyFirstProject_v2\MyFirstProject_v2\MyFirstProject_v2\NoName 02.05.2022\bin\Debug\NoName 02.05.2022.exe.config
+Z:\Мои документы\Влад\C#\MyFirstProject_v2\MyFirstProject_v2\MyFirstProject_v2\NoName 02.05.2022\bin\Debug\NoName 02.05.2022.exe
+Z:\Мои документы\Влад\C#\MyFirstProject_v2\MyFirstProject_v2\MyFirstProject_v2\NoName 02.05.2022\bin\Debug\NoName 02.05.2022.pdb
+Z:\Мои документы\Влад\C#\MyFirstProject_v2\MyFirstProject_v2\MyFirstProject_v2\NoName 02.05.2022\bin\Debug\System.Data.SqlClient.dll
+Z:\Мои документы\Влад\C#\MyFirstProject_v2\MyFirstProject_v2\MyFirstProject_v2\NoName 02.05.2022\bin\Debug\System.Data.SqlClient.xml
+Z:\Мои документы\Влад\C#\MyFirstProject_v2\MyFirstProject_v2\MyFirstProject_v2\NoName 02.05.2022\obj\Debug\MyFirstProject.csproj.AssemblyReference.cache
+Z:\Мои документы\Влад\C#\MyFirstProject_v2\MyFirstProject_v2\MyFirstProject_v2\NoName 02.05.2022\obj\Debug\MyFirstProject.csproj.SuggestedBindingRedirects.cache
+Z:\Мои документы\Влад\C#\MyFirstProject_v2\MyFirstProject_v2\MyFirstProject_v2\NoName 02.05.2022\obj\Debug\ResDictionary.baml
+Z:\Мои документы\Влад\C#\MyFirstProject_v2\MyFirstProject_v2\MyFirstProject_v2\NoName 02.05.2022\obj\Debug\Views\MainWindow.g.cs
+Z:\Мои документы\Влад\C#\MyFirstProject_v2\MyFirstProject_v2\MyFirstProject_v2\NoName 02.05.2022\obj\Debug\Views\RegWindow.g.cs
+Z:\Мои документы\Влад\C#\MyFirstProject_v2\MyFirstProject_v2\MyFirstProject_v2\NoName 02.05.2022\obj\Debug\Views\StoreWindow.g.cs
+Z:\Мои документы\Влад\C#\MyFirstProject_v2\MyFirstProject_v2\MyFirstProject_v2\NoName 02.05.2022\obj\Debug\Views\TradeWindow.g.cs
+Z:\Мои документы\Влад\C#\MyFirstProject_v2\MyFirstProject_v2\MyFirstProject_v2\NoName 02.05.2022\obj\Debug\App.g.cs
+Z:\Мои документы\Влад\C#\MyFirstProject_v2\MyFirstProject_v2\MyFirstProject_v2\NoName 02.05.2022\obj\Debug\NoName 02.05.2022_Content.g.cs
+Z:\Мои документы\Влад\C#\MyFirstProject_v2\MyFirstProject_v2\MyFirstProject_v2\NoName 02.05.2022\obj\Debug\NoName 02.05.2022_MarkupCompile.cache
+Z:\Мои документы\Влад\C#\MyFirstProject_v2\MyFirstProject_v2\MyFirstProject_v2\NoName 02.05.2022\obj\Debug\NoName 02.05.2022_MarkupCompile.lref
+Z:\Мои документы\Влад\C#\MyFirstProject_v2\MyFirstProject_v2\MyFirstProject_v2\NoName 02.05.2022\obj\Debug\App.baml
+Z:\Мои документы\Влад\C#\MyFirstProject_v2\MyFirstProject_v2\MyFirstProject_v2\NoName 02.05.2022\obj\Debug\Views\MainWindow.baml
+Z:\Мои документы\Влад\C#\MyFirstProject_v2\MyFirstProject_v2\MyFirstProject_v2\NoName 02.05.2022\obj\Debug\Views\RegWindow.baml
+Z:\Мои документы\Влад\C#\MyFirstProject_v2\MyFirstProject_v2\MyFirstProject_v2\NoName 02.05.2022\obj\Debug\Views\StoreWindow.baml
+Z:\Мои документы\Влад\C#\MyFirstProject_v2\MyFirstProject_v2\MyFirstProject_v2\NoName 02.05.2022\obj\Debug\Views\TradeWindow.baml
+Z:\Мои документы\Влад\C#\MyFirstProject_v2\MyFirstProject_v2\MyFirstProject_v2\NoName 02.05.2022\obj\Debug\NoName 02.05.2022.g.resources
+Z:\Мои документы\Влад\C#\MyFirstProject_v2\MyFirstProject_v2\MyFirstProject_v2\NoName 02.05.2022\obj\Debug\NoName_02._05._2022.Properties.Resources.resources
+Z:\Мои документы\Влад\C#\MyFirstProject_v2\MyFirstProject_v2\MyFirstProject_v2\NoName 02.05.2022\obj\Debug\MyFirstProject.csproj.GenerateResource.cache
+Z:\Мои документы\Влад\C#\MyFirstProject_v2\MyFirstProject_v2\MyFirstProject_v2\NoName 02.05.2022\obj\Debug\MyFirstProject.csproj.CoreCompileInputs.cache
+Z:\Мои документы\Влад\C#\MyFirstProject_v2\MyFirstProject_v2\MyFirstProject_v2\NoName 02.05.2022\obj\Debug\MyFirstProject.csproj.CopyComplete
+Z:\Мои документы\Влад\C#\MyFirstProject_v2\MyFirstProject_v2\MyFirstProject_v2\NoName 02.05.2022\obj\Debug\NoName 02.05.2022.exe
+Z:\Мои документы\Влад\C#\MyFirstProject_v2\MyFirstProject_v2\MyFirstProject_v2\NoName 02.05.2022\obj\Debug\NoName 02.05.2022.pdb

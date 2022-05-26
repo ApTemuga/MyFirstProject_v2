@@ -9,10 +9,10 @@ namespace NoName_02._05._2022.Models
 {
     class Car
     {
-        public int Id { get; }
-        public int Price { get; }
-        public string Model { get; }
-        private List<User> Users { get; }
+        public int Id { get; set; }
+        public int Price { get; set; }
+        public string Model { get; set; }
+        private List<User> Users { get; set; }
 
         public Car()
         {

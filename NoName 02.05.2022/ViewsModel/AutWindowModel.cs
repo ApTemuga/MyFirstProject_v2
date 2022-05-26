@@ -10,6 +10,7 @@ using System.Data.SqlClient;
 using System.Windows.Controls;
 using System.Windows;
 using NoName_02._05._2022.Models;
+using System.Data;
 
 namespace NoName_02._05._2022.ViewsModel
 {
@@ -31,6 +32,7 @@ namespace NoName_02._05._2022.ViewsModel
         private bool correctEnter;
 
         public static List<Car> carList = new List<Car>();
+        public List<int> carsId = new List<int>();
 
         public BaseCommands ChangeToRegWindow
         {
@@ -50,8 +52,12 @@ namespace NoName_02._05._2022.ViewsModel
             {
                 return changeToStoreWindow ?? (changeToStoreWindow = new BaseCommands(obj =>
                 {
-                    string prPath = @"D:\Подгорный Владислав\MyFirstProject-master\NoName 02.05.2022\CarStoreDB.mdf";
+                    /*string prPath = @"D:\Подгорный Владислав\MyFirstProject-master\NoName 02.05.2022\CarStoreDB.mdf";
+                    string strCon = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={prPath};Integrated Security=True";*/
+
+                    string prPath = @"Z:\Мои документы\Влад\C#\MyFirstProject_v2\MyFirstProject_v2\MyFirstProject_v2\NoName 02.05.2022\CarStoreDB.mdf";
                     string strCon = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={prPath};Integrated Security=True";
+
                     using (SqlConnection con = new SqlConnection(strCon))
                     {
                         PasswordBox pb = (PasswordBox)obj;
@@ -71,7 +77,6 @@ namespace NoName_02._05._2022.ViewsModel
                             }
                             else
                             {
-
                                 MessageBox.Show("Данные введены неверно!");
                                 correctEnter = false;
                             }
@@ -83,16 +88,36 @@ namespace NoName_02._05._2022.ViewsModel
                         using (SqlConnection con = new SqlConnection(strCon))
                         {
                             con.Open();
-                            SqlCommand getCarId = new SqlCommand($@"SELECT * FROM [Cars] Join [Users] ON [Cars].Id = [Users].CarId WHERE [Users].Id = '{userId}'", con);
+
+                            SqlCommand getCarId = new SqlCommand($@"SELECT CarId FROM [Users] WHERE [Users].Id = '{userId}'", con);
 
                             using (SqlDataReader dr = getCarId.ExecuteReader())
                             {
-                                foreach (Car car in carList)
+                                foreach (int el in carsId)
                                 {
-                                    
+                                    carsId.Add((int)dr.GetValue(0));
                                 }
                             }
                             con.Close();
+                        }
+                        using (SqlConnection con = new SqlConnection(strCon))
+                        {
+                            SqlCommand getCarId = new SqlCommand($@"SELECT * FROM [Cars] Join [Users] ON [Cars].Id = [Users].CarId WHERE [Users].Id = '{userId}'", con);
+                            con.Open();
+                            using (SqlDataReader dr = getCarId.ExecuteReader())
+                            {
+                                dr.Read();
+                                while (dr.Read())
+                                {
+                                    Car car = new Car();
+                                    car.Id = dr.GetInt32(0);
+                                    car.Model = dr.GetString(1);
+                                    car.Price = dr.GetInt32(2);
+                                    carList.Add(car);
+                                }
+                                dr.Close();
+                                con.Close();
+                            }
                         }
                     }
                 }));

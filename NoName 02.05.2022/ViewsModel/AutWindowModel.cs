@@ -103,10 +103,10 @@ namespace NoName_02._05._2022.ViewsModel
                         using (SqlConnection con = new SqlConnection(strCon))
                         {
                             SqlCommand getCarId = new SqlCommand($@"SELECT * FROM [Cars] Join [Users] ON [Cars].Id = [Users].CarId WHERE [Users].Id = '{userId}'", con);
+                            SqlCommand getCars = new SqlCommand($@"SELECT * FROM Cars JOIN Users ON Cars.Id = Users.CarId", con);
                             con.Open();
-                            using (SqlDataReader dr = getCarId.ExecuteReader())
+                            using (SqlDataReader dr = getCars.ExecuteReader())
                             {
-                                dr.Read();
                                 while (dr.Read())
                                 {
                                     Car car = new Car();
@@ -115,7 +115,6 @@ namespace NoName_02._05._2022.ViewsModel
                                     car.Price = dr.GetInt32(2);
                                     carList.Add(car);
                                 }
-                                dr.Close();
                                 con.Close();
                             }
                         }

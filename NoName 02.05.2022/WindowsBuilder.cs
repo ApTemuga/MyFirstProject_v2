@@ -39,10 +39,19 @@ namespace NoName_02._05._2022
             window.Show();
         }
 
-        public static void ShowTradeWindow()
+        public static void ShowSellWindow()
         {
-            var window = new TradeWindow();
-            var viewModel = new TradeWindowModel();
+            var window = new SellWindow();
+            var viewModel = new SellWindowModel();
+            window.DataContext = viewModel;
+            viewModel.EventCloseWindow += (sender, args) => { window.Close(); };
+            window.Show();
+        }
+
+        public static void ShowBuyWindow()
+        {
+            var window = new BuyWindow();
+            var viewModel = new BuyWindowModel();
             window.DataContext = viewModel;
             viewModel.EventCloseWindow += (sender, args) => { window.Close(); };
             window.Show();

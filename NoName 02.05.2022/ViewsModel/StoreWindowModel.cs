@@ -18,7 +18,9 @@ namespace NoName_02._05._2022.ViewsModel
 
         private BaseCommands changeToAutWindow;
 
-        private BaseCommands changeToTradeWindow;
+        private BaseCommands changeToSellWindow;
+
+        private BaseCommands changeToBuyWindow;
 
         public BaseCommands ChangeToAutWindow
         {
@@ -32,13 +34,25 @@ namespace NoName_02._05._2022.ViewsModel
             }
         }
 
-        public BaseCommands ChangeToTradeWindow
+        public BaseCommands ChangeToSellWindow
         {
             get
             {
-                return changeToTradeWindow ?? (changeToTradeWindow = new BaseCommands(obj =>
+                return changeToSellWindow ?? (changeToSellWindow = new BaseCommands(obj =>
                 {
-                    WindowsBuilder.ShowTradeWindow();
+                    WindowsBuilder.ShowSellWindow();
+                    CloseWindow();
+                }));
+            }
+        }
+
+        public BaseCommands ChangeToBuyWindow
+        {
+            get
+            {
+                return changeToBuyWindow ?? (changeToBuyWindow = new BaseCommands(obj =>
+                {
+                    WindowsBuilder.ShowBuyWindow();
                     CloseWindow();
                 }));
             }

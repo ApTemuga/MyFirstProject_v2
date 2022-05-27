@@ -77,20 +77,28 @@
     <Compile Include="Models\Car.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="ViewsModel\AutWindowModel.cs" />
+    <Compile Include="ViewsModel\BuyWindowModel.cs" />
     <Compile Include="ViewsModel\RegWindowModel.cs" />
     <Compile Include="ViewsModel\StoreWindowModel.cs" />
-    <Compile Include="ViewsModel\TradeWindowModel.cs" />
+    <Compile Include="ViewsModel\SellWindowModel.cs" />
+    <Compile Include="Views\BuyWindow.xaml.cs">
+      <DependentUpon>BuyWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\RegWindow.xaml.cs">
       <DependentUpon>RegWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SellWindow.xaml.cs">
+      <DependentUpon>SellWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\StoreWindow.xaml.cs">
       <DependentUpon>StoreWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\TradeWindow.xaml.cs">
-      <DependentUpon>TradeWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="WindowsBuilder.cs" />
     <Page Include="ResDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\BuyWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -111,11 +119,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\StoreWindow.xaml">
+    <Page Include="Views\SellWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\TradeWindow.xaml">
+    <Page Include="Views\StoreWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

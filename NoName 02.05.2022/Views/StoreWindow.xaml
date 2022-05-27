@@ -24,14 +24,14 @@
                     <RowDefinition Height="20*"/>
                     <RowDefinition Height="35*"/>
                     <RowDefinition Height="20*"/>
-                    <RowDefinition Height="20*"/>
                     <RowDefinition Height="35*"/>
                     <RowDefinition Height="20*"/>
+                    <RowDefinition Height="35*"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="25*"/>
-                    <ColumnDefinition Width="170*"/>
-                    <ColumnDefinition Width="25*"/>
+                    <ColumnDefinition Width="19*"/>
+                    <ColumnDefinition Width="182*"/>
+                    <ColumnDefinition Width="19*"/>
                 </Grid.ColumnDefinitions>
                 <Image
                     Grid.Row="1"
@@ -46,7 +46,7 @@
                     Grid.Column="1"
                     />
                 <Button
-                    Grid.Row="10"
+                    Grid.Row="11"
                     Grid.Column="1" 
                     Background="Red" 
                     BorderBrush="Red"
@@ -56,11 +56,20 @@
                 <Button
                     Grid.Row="7"
                     Grid.Column="1" 
-                    Content="Перейти в окно торговли" 
+                    Content="Создать объявление о продаже" 
                     Background="#FF650999" 
                     BorderBrush="#FF650999" 
                     Foreground="#FFEDD5FB"
-                    Command="{Binding ChangeToTradeWindow}"
+                    Command="{Binding ChangeToSellWindow}"
+                    />
+                <Button
+                    Grid.Row="9"
+                    Grid.Column="1" 
+                    Content="Создать объявление о покупке" 
+                    Background="#FF650999" 
+                    BorderBrush="#FF650999" 
+                    Foreground="#FFEDD5FB"
+                    Command="{Binding ChangeToBuyWindow}"
                     />
             </Grid>
         </StackPanel>

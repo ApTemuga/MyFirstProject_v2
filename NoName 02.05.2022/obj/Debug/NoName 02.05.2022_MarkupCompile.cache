@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 Z:\Мои документы\Влад\C#\MyFirstProject_v2\MyFirstProject_v2\MyFirstProject_v2\NoName 02.05.2022\App.xaml
-51323573470
+61653721016
 2-802525374
-17-1791947083
+19-602004279
 14289575775
-ResDictionary.xaml;Views\MainWindow.xaml;Views\RegWindow.xaml;Views\StoreWindow.xaml;Views\TradeWindow.xaml;
+ResDictionary.xaml;Views\BuyWindow.xaml;Views\MainWindow.xaml;Views\RegWindow.xaml;Views\SellWindow.xaml;Views\StoreWindow.xaml;
 
 False
 

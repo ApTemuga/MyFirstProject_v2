@@ -176,6 +176,9 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Images\DefaultAvatar.jpg" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="CarStoreDB.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

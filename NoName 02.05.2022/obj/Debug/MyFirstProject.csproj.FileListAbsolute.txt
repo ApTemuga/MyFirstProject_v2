@@ -108,3 +108,34 @@ Z:\Мои документы\Влад\C#\MyFirstProject_v2\MyFirstProject_v2\MyF
 Z:\Мои документы\Влад\C#\MyFirstProject_v2\MyFirstProject_v2\MyFirstProject_v2\NoName 02.05.2022\obj\Debug\Views\SellWindow.g.cs
 Z:\Мои документы\Влад\C#\MyFirstProject_v2\MyFirstProject_v2\MyFirstProject_v2\NoName 02.05.2022\obj\Debug\Views\BuyWindow.baml
 Z:\Мои документы\Влад\C#\MyFirstProject_v2\MyFirstProject_v2\MyFirstProject_v2\NoName 02.05.2022\obj\Debug\Views\SellWindow.baml
+D:\Подгорный Владислав\MyFirstProject_v2\NoName 02.05.2022\bin\Debug\CarStoreDB.mdf
+D:\Подгорный Владислав\MyFirstProject_v2\NoName 02.05.2022\bin\Debug\CarStoreDB_log.ldf
+D:\Подгорный Владислав\MyFirstProject_v2\NoName 02.05.2022\bin\Debug\NoName 02.05.2022.exe.config
+D:\Подгорный Владислав\MyFirstProject_v2\NoName 02.05.2022\bin\Debug\NoName 02.05.2022.exe
+D:\Подгорный Владислав\MyFirstProject_v2\NoName 02.05.2022\bin\Debug\NoName 02.05.2022.pdb
+D:\Подгорный Владислав\MyFirstProject_v2\NoName 02.05.2022\bin\Debug\System.Data.SqlClient.dll
+D:\Подгорный Владислав\MyFirstProject_v2\NoName 02.05.2022\bin\Debug\System.Data.SqlClient.xml
+D:\Подгорный Владислав\MyFirstProject_v2\NoName 02.05.2022\obj\Debug\MyFirstProject.csproj.AssemblyReference.cache
+D:\Подгорный Владислав\MyFirstProject_v2\NoName 02.05.2022\obj\Debug\ResDictionary.baml
+D:\Подгорный Владислав\MyFirstProject_v2\NoName 02.05.2022\obj\Debug\Views\BuyWindow.g.cs
+D:\Подгорный Владислав\MyFirstProject_v2\NoName 02.05.2022\obj\Debug\Views\MainWindow.g.cs
+D:\Подгорный Владислав\MyFirstProject_v2\NoName 02.05.2022\obj\Debug\Views\RegWindow.g.cs
+D:\Подгорный Владислав\MyFirstProject_v2\NoName 02.05.2022\obj\Debug\Views\SellWindow.g.cs
+D:\Подгорный Владислав\MyFirstProject_v2\NoName 02.05.2022\obj\Debug\Views\StoreWindow.g.cs
+D:\Подгорный Владислав\MyFirstProject_v2\NoName 02.05.2022\obj\Debug\App.g.cs
+D:\Подгорный Владислав\MyFirstProject_v2\NoName 02.05.2022\obj\Debug\NoName 02.05.2022_Content.g.cs
+D:\Подгорный Владислав\MyFirstProject_v2\NoName 02.05.2022\obj\Debug\NoName 02.05.2022_MarkupCompile.cache
+D:\Подгорный Владислав\MyFirstProject_v2\NoName 02.05.2022\obj\Debug\NoName 02.05.2022_MarkupCompile.lref
+D:\Подгорный Владислав\MyFirstProject_v2\NoName 02.05.2022\obj\Debug\App.baml
+D:\Подгорный Владислав\MyFirstProject_v2\NoName 02.05.2022\obj\Debug\Views\BuyWindow.baml
+D:\Подгорный Владислав\MyFirstProject_v2\NoName 02.05.2022\obj\Debug\Views\MainWindow.baml
+D:\Подгорный Владислав\MyFirstProject_v2\NoName 02.05.2022\obj\Debug\Views\RegWindow.baml
+D:\Подгорный Владислав\MyFirstProject_v2\NoName 02.05.2022\obj\Debug\Views\SellWindow.baml
+D:\Подгорный Владислав\MyFirstProject_v2\NoName 02.05.2022\obj\Debug\Views\StoreWindow.baml
+D:\Подгорный Владислав\MyFirstProject_v2\NoName 02.05.2022\obj\Debug\NoName 02.05.2022.g.resources
+D:\Подгорный Владислав\MyFirstProject_v2\NoName 02.05.2022\obj\Debug\NoName_02._05._2022.Properties.Resources.resources
+D:\Подгорный Владислав\MyFirstProject_v2\NoName 02.05.2022\obj\Debug\MyFirstProject.csproj.GenerateResource.cache
+D:\Подгорный Владислав\MyFirstProject_v2\NoName 02.05.2022\obj\Debug\MyFirstProject.csproj.CoreCompileInputs.cache
+D:\Подгорный Владислав\MyFirstProject_v2\NoName 02.05.2022\obj\Debug\MyFirstProject.csproj.CopyComplete
+D:\Подгорный Владислав\MyFirstProject_v2\NoName 02.05.2022\obj\Debug\NoName 02.05.2022.exe
+D:\Подгорный Владислав\MyFirstProject_v2\NoName 02.05.2022\obj\Debug\NoName 02.05.2022.pdb

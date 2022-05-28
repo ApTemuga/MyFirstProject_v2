@@ -44,11 +44,13 @@ namespace NoName_02._05._2022.ViewsModel
             {
                 return regNewUser ?? (regNewUser = new BaseCommands(obj =>
                 {
-                    /*string prPath = @"D:\Подгорный Владислав\MyFirstProject-master\NoName 02.05.2022\CarStoreDB.mdf";
-                    string strCon = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={prPath};Integrated Security=True";*/
-
-                    string prPath = @"Z:\Мои документы\Влад\C#\MyFirstProject_v2\MyFirstProject_v2\MyFirstProject_v2\NoName 02.05.2022\CarStoreDB.mdf";
+                    string prPath = @"D:\Подгорный Владислав\MyFirstProject_v2\NoName 02.05.2022\CarStoreDB.mdf";
                     string strCon = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={prPath};Integrated Security=True";
+
+                    string AvURL = @"D:\Подгорный Владислав\MyFirstProject_v2\NoName 02.05.2022\Images\DefaultAvatar.jpg";
+
+                    /*string prPath = @"Z:\Мои документы\Влад\C#\MyFirstProject_v2\MyFirstProject_v2\MyFirstProject_v2\NoName 02.05.2022\CarStoreDB.mdf";
+                    string strCon = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={prPath};Integrated Security=True";*/
 
                     using (SqlConnection con = new SqlConnection(strCon))
                     {

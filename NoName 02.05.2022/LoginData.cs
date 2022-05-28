@@ -52,8 +52,7 @@ namespace NoName_02._05._2022
             {
                 return false;
             }
-            Regex rx = new Regex(@"^[0-9A-zА-я]{3,32}$");
-            return rx.IsMatch(adName);
+            return true;
         }
 
         public static bool CheckDiscription(string discription)
@@ -62,7 +61,7 @@ namespace NoName_02._05._2022
             {
                 return false;
             }
-            Regex rx = new Regex(@"^[0-9A-zА-я]{10,120}$");
+            Regex rx = new Regex(@"^[0-9A-zА-я]{10,200}$");
             return rx.IsMatch(discription);
         }
 
@@ -84,6 +83,16 @@ namespace NoName_02._05._2022
             }
             Regex rx = new Regex(@"^[0-9]{4,10}$");
             return rx.IsMatch(price);
+        }
+
+        public static bool CheckId(string id)
+        {
+            if (string.IsNullOrEmpty(id))
+            {
+                return false;
+            }
+            Regex rx = new Regex(@"^[0-9]{0,10000}$");
+            return rx.IsMatch(id);
         }
     }
 }

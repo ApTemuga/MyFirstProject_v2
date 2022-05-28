@@ -37,14 +37,16 @@
                     Grid.Row="1"
                     Grid.Column="1"
                     />
-                <Label x:Name="StoreNickname"
+                <StackPanel x:Name="nickANDwallet" Grid.Row="2" Grid.RowSpan="2" Grid.Column="1" Background="#FF747474">
+                    <Label x:Name="StoreNickname"
                     Grid.Row="2"
                     Grid.Column="1"
                     />
-                <Label x:Name="StoreWallet"
+                    <Label x:Name="StoreWallet"
                     Grid.Row="4"
                     Grid.Column="1"
                     />
+                </StackPanel>
                 <Button
                     Grid.Row="11"
                     Grid.Column="1" 

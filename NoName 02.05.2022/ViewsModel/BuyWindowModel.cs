@@ -17,13 +17,12 @@ namespace NoName_02._05._2022.ViewsModel
 
         private BaseCommands changeToStoreWindow;
 
-        public BaseCommands ChangeToSellWindow
+        public BaseCommands ChangeToStoreWindow
         {
             get
             {
                 return changeToStoreWindow ?? (changeToStoreWindow = new BaseCommands(obj =>
                 {
-                    WindowsBuilder.ShowStoreWindow();
                     CloseWindow();
                 }));
             }

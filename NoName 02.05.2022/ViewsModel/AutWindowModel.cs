@@ -24,15 +24,11 @@ namespace NoName_02._05._2022.ViewsModel
 
         private BaseCommands changeToStoreWindow;
 
-        private BaseCommands getCarList;
-
         public static string userLogin;
-        private int userId;
+        public static int userId;
         public static int wallet;
 
-        private bool correctEnter;
-
-        public static List<Car> carList = new List<Car>();
+        public static bool correctEnter;
 
         public BaseCommands ChangeToRegWindow
         {
@@ -52,11 +48,11 @@ namespace NoName_02._05._2022.ViewsModel
             {
                 return changeToStoreWindow ?? (changeToStoreWindow = new BaseCommands(obj =>
                 {
-                    /*string prPath = @"D:\Подгорный Владислав\MyFirstProject-master\NoName 02.05.2022\CarStoreDB.mdf";
-                    string strCon = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={prPath};Integrated Security=True";*/
-
-                    string prPath = @"Z:\Мои документы\Влад\C#\MyFirstProject_v2\MyFirstProject_v2\MyFirstProject_v2\NoName 02.05.2022\CarStoreDB.mdf";
+                    string prPath = @"D:\Подгорный Владислав\MyFirstProject_v2\NoName 02.05.2022\CarStoreDB.mdf";
                     string strCon = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={prPath};Integrated Security=True";
+
+                    /*string prPath = @"Z:\Мои документы\Влад\C#\MyFirstProject_v2\MyFirstProject_v2\MyFirstProject_v2\NoName 02.05.2022\CarStoreDB.mdf";
+                    string strCon = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={prPath};Integrated Security=True";*/
 
                     using (SqlConnection con = new SqlConnection(strCon))
                     {
@@ -70,11 +66,11 @@ namespace NoName_02._05._2022.ViewsModel
                         {
                             if (reader.Read() && (string)reader.GetValue(1) == userLogin && (string)reader.GetValue(3) == password)
                             {
+                                userId = (int)reader.GetValue(0);
+                                wallet = (int)reader.GetValue(6);
+                                correctEnter = true;
                                 WindowsBuilder.ShowStoreWindow();
                                 CloseWindow();
-                                userId = (int)reader.GetValue(0);
-                                wallet = (int)reader.GetValue(5);
-                                correctEnter = true;
                             }
                             else
                             {
@@ -83,54 +79,6 @@ namespace NoName_02._05._2022.ViewsModel
                             }
                         }
                         con.Close();
-                    }
-                    if (correctEnter)
-                    {
-                        using (SqlConnection con = new SqlConnection(strCon))
-                        {
-                            SqlCommand getCarId = new SqlCommand($@"SELECT * FROM [Cars] Join [Users] ON [Cars].Id = [Users].CarId WHERE [Users].Id = '{userId}'", con);
-                            SqlCommand getCars = new SqlCommand($@"SELECT * FROM Cars JOIN Users ON Cars.Id = Users.CarId", con);
-                            con.Open();
-                            using (SqlDataReader dr = getCars.ExecuteReader())
-                            {
-                                while (dr.Read())
-                                {
-                                    Car car = new Car();
-                                    car.Id = dr.GetInt32(0);
-                                    car.Model = dr.GetString(1);
-                                    car.Price = dr.GetInt32(2);
-                                    carList.Add(car);
-                                }
-                                con.Close();
-                            }
-                        }
-                    }
-                }));
-            }
-        }
-
-        public BaseCommands GetCarList
-        {
-            get
-            {
-                return getCarList ?? (getCarList = new BaseCommands(obj =>
-                {
-                    if (correctEnter)
-                    {
-                        string prPath = @"D:\Подгорный Владислав\MyFirstProject-master\NoName 02.05.2022\CarStoreDB.mdf";
-                        string strCon = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={prPath};Integrated Security=True";
-                        using (SqlConnection con = new SqlConnection(strCon))
-                        {
-                            SqlCommand getCarId = new SqlCommand(@"SELECT * FROM [Cars] Join [Users] ON Cars.Id = Users.CarId WHERE [User].Id = '{userId}'");
-
-                            using (SqlDataReader dr = getCarId.ExecuteReader())
-                            {
-                                foreach (Car car in carList)
-                                {
-                                    carList.Add(car);
-                                }
-                            }
-                        }
                     }
                 }));
             }

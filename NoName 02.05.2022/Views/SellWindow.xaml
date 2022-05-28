@@ -24,6 +24,10 @@
             <RowDefinition Height="30*"/>
             <RowDefinition Height="5*"/>
             <RowDefinition Height="20*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="20*"/>
             <RowDefinition Height="20*"/>
             <RowDefinition Height="30*"/>
             <RowDefinition Height="25*"/>
@@ -58,41 +62,53 @@
         Grid.Row="7"
         Text="{Binding DiscriptionAd, UpdateSourceTrigger=PropertyChanged}"
         />
+        <Label x:Name="lSellCarIdAd"
+        Content="Id машины"
+        Grid.Column="3"
+        Grid.Row="9"
+        Margin="24,0,0,0"
+        />
+        <TextBox x:Name="tSellCarIdAd"
+        Grid.Column="3"
+        Grid.Row="11"
+        Text="{Binding CarIdAd, UpdateSourceTrigger=PropertyChanged}"
+        />
         <Label x:Name="lSellPriceAd"
         Content="Цена машины"
         Grid.Column="3"
-        Grid.Row="9"
+        Grid.Row="13"
         Margin="50,0,0,0"
         />
         <TextBox x:Name="tSellPriceAd"
         Grid.Column="3"
-        Grid.Row="11"
+        Grid.Row="15"
         Text="{Binding PriceAd, UpdateSourceTrigger=PropertyChanged}"
         />
         <Label x:Name="lSellNumAd"
         Content="Ваш номер телефона"
         Grid.Column="3"
-        Grid.Row="13"
+        Grid.Row="17"
         Margin="30,0,0,0"
         />
         <TextBox x:Name="tSellNumAd"
         Grid.Column="3"
-        Grid.Row="15"
+        Grid.Row="19"
         Text="{Binding NumberAd, UpdateSourceTrigger=PropertyChanged}"
         />
         <Button x:Name="CreateAd"
         Grid.Column="3"
-        Grid.Row="17"
+        Grid.Row="21"
         Content="Создать объявление"
+        Command="{Binding CreateAd}"
         />
 
-        <StackPanel x:Name="SellAds"  Grid.Column="1" Grid.RowSpan="20" Background="#FFB7B7B7">
+        <StackPanel x:Name="SellAds"  Grid.Column="1" Grid.RowSpan="23" Background="#FFB7B7B7">
         
         </StackPanel>
         
         <StackPanel x:Name="SellProfile"  Background="#FF424141"
         Grid.Column="0" 
-        Grid.RowSpan="20">
+        Grid.RowSpan="23">
             <Grid x:Name="SellProfileG">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="18*"/>

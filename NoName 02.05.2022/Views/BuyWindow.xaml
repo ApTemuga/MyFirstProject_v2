@@ -7,6 +7,50 @@
         mc:Ignorable="d"
         Title="BuyWindow" Height="450" Width="800">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="216"/>
+            <ColumnDefinition Width="234"/>
+        </Grid.ColumnDefinitions>
         
+        <StackPanel x:Name="SellProfile"  Background="#FF424141"
+        Grid.Column="0">
+            <Grid x:Name="SellProfileG">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="18*"/>
+                    <ColumnDefinition Width="180*"/>
+                    <ColumnDefinition Width="18*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="125"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="35"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="35"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="35"/>
+                </Grid.RowDefinitions>
+                
+                <Label x:Name="StoreNickname"
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    />
+                <Label x:Name="StoreWallet"
+                    Grid.Row="4"
+                    Grid.Column="1"
+                    />
+                <Button x:Name="Cancel"
+                Grid.Row="11"
+                Grid.Column="1"
+                Content="Вернуться в окно профиля" 
+                Background="Red"
+                Command="{Binding ChangeToStoreWindow}"
+                />
+            </Grid>
+        </StackPanel>
     </Grid>
 </Window>

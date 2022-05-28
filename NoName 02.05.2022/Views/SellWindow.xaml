@@ -8,17 +8,127 @@
         Title="SellWindow" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="379*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="20*"/>
             <RowDefinition Height="30*"/>
             <RowDefinition Height="25*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="25*"/>
-            <ColumnDefinition Width="188*"/>
-            <ColumnDefinition Width="338*"/>
-            <ColumnDefinition Width="159*"/>
-            <ColumnDefinition Width="90*"/>
+            <ColumnDefinition Width="216"/>
+            <ColumnDefinition Width="244"/>
+            <ColumnDefinition Width="80"/>
+            <ColumnDefinition Width="180"/>
+            <ColumnDefinition Width="80"/>
         </Grid.ColumnDefinitions>
+        
+        <Label x:Name="lSellNameAd"
+        Content="Название объявления"
+        Grid.Column="3"
+        Grid.Row="1"
+        Margin="25,0,0,0"
+        />
+        <TextBox x:Name="tSellNameAd"
+        Grid.Column="3"
+        Grid.Row="3"
+        Text="{Binding NameAd, UpdateSourceTrigger=PropertyChanged}"
+        />
+        <Label x:Name="lSellDescriptionAd"
+        Content="Описание объявления"
+        Grid.Column="3"
+        Grid.Row="5"
+        Margin="24,0,0,0"
+        />
+        <TextBox x:Name="tSellDescriptionAd"
+        Grid.Column="3"
+        Grid.Row="7"
+        Text="{Binding DiscriptionAd, UpdateSourceTrigger=PropertyChanged}"
+        />
+        <Label x:Name="lSellPriceAd"
+        Content="Цена машины"
+        Grid.Column="3"
+        Grid.Row="9"
+        Margin="50,0,0,0"
+        />
+        <TextBox x:Name="tSellPriceAd"
+        Grid.Column="3"
+        Grid.Row="11"
+        Text="{Binding PriceAd, UpdateSourceTrigger=PropertyChanged}"
+        />
+        <Label x:Name="lSellNumAd"
+        Content="Ваш номер телефона"
+        Grid.Column="3"
+        Grid.Row="13"
+        Margin="30,0,0,0"
+        />
+        <TextBox x:Name="tSellNumAd"
+        Grid.Column="3"
+        Grid.Row="15"
+        Text="{Binding NumberAd, UpdateSourceTrigger=PropertyChanged}"
+        />
+        <Button x:Name="CreateAd"
+        Grid.Column="3"
+        Grid.Row="17"
+        Content="Создать объявление"
+        />
 
+        <StackPanel x:Name="SellAds"  Grid.Column="1" Grid.RowSpan="20" Background="#FFB7B7B7">
+        
+        </StackPanel>
+        
+        <StackPanel x:Name="SellProfile"  Background="#FF424141"
+        Grid.Column="0" 
+        Grid.RowSpan="20">
+            <Grid x:Name="SellProfileG">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="18*"/>
+                    <ColumnDefinition Width="180*"/>
+                    <ColumnDefinition Width="18*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="125"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="35"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="35"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="35"/>
+                </Grid.RowDefinitions>
+                <Label x:Name="StoreNickname"
+                Grid.Row="2"
+                Grid.Column="1"
+                />
+                <Label x:Name="StoreWallet"
+                Grid.Row="4"
+                Grid.Column="1"
+                />
+                <Button x:Name="Cancel"
+                Grid.Row="11"
+                Grid.Column="1"
+                Content="Вернуться в окно профиля" 
+                Background="Red"
+                Command="{Binding ChangeToStoreWindow}"
+                />
+            </Grid>
+        </StackPanel>
     </Grid>
 </Window>

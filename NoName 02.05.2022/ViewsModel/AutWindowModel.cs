@@ -26,13 +26,13 @@ namespace NoName_02._05._2022.ViewsModel
 
         private BaseCommands getCarList;
 
-        private string userLogin;
+        public static string userLogin;
         private int userId;
+        public static int wallet;
 
         private bool correctEnter;
 
         public static List<Car> carList = new List<Car>();
-        public List<int> carsId = new List<int>();
 
         public BaseCommands ChangeToRegWindow
         {
@@ -73,6 +73,7 @@ namespace NoName_02._05._2022.ViewsModel
                                 WindowsBuilder.ShowStoreWindow();
                                 CloseWindow();
                                 userId = (int)reader.GetValue(0);
+                                wallet = (int)reader.GetValue(5);
                                 correctEnter = true;
                             }
                             else
@@ -85,21 +86,6 @@ namespace NoName_02._05._2022.ViewsModel
                     }
                     if (correctEnter)
                     {
-                        using (SqlConnection con = new SqlConnection(strCon))
-                        {
-                            con.Open();
-
-                            SqlCommand getCarId = new SqlCommand($@"SELECT CarId FROM [Users] WHERE [Users].Id = '{userId}'", con);
-
-                            using (SqlDataReader dr = getCarId.ExecuteReader())
-                            {
-                                foreach (int el in carsId)
-                                {
-                                    carsId.Add((int)dr.GetValue(0));
-                                }
-                            }
-                            con.Close();
-                        }
                         using (SqlConnection con = new SqlConnection(strCon))
                         {
                             SqlCommand getCarId = new SqlCommand($@"SELECT * FROM [Cars] Join [Users] ON [Cars].Id = [Users].CarId WHERE [Users].Id = '{userId}'", con);
@@ -155,8 +141,6 @@ namespace NoName_02._05._2022.ViewsModel
             get { return userLogin; }
             set { userLogin = value; OnPropertyChanged("UserLogin"); }
         }
-
-
         public void OnPropertyChanged([CallerMemberName] string prop = "")
         {
             if (PropertyChanged != null)

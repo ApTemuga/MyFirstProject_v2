@@ -26,6 +26,8 @@ namespace NoName_02._05._2022.Views
             InitializeComponent();
             DataContext = new StoreWindowModel();
             CarsList.ItemsSource = AutWindowModel.carList;
+            StoreNickname.Content = "Ваше имя: " + AutWindowModel.userLogin;
+            StoreWallet.Content = "Ваш счёт: " + AutWindowModel.wallet;
         }
     }
 }

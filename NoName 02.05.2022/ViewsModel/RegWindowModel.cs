@@ -58,7 +58,7 @@ namespace NoName_02._05._2022.ViewsModel
                         string password = pb.Password;
 
                         SqlCommand checkUser = new SqlCommand(@"SELECT * FROM [Users] WHERE CONVERT(VARCHAR, UserName) = '{newUserLogin}'", con);
-                        SqlCommand checkCorrect = new SqlCommand(@"INSERT INTO [Users](UserName, UserEmail, UserPassword)" + $"VALUES('{newUserLogin}', '{newUserEmail}', '{password}')", con);
+                        SqlCommand checkCorrect = new SqlCommand(@"INSERT INTO [Users](UserName, UserEmail, UserPassword, Wallet)" + $"VALUES('{newUserLogin}', '{newUserEmail}', '{password}', {0})", con);
                         
                         con.Open();
 

@@ -5,6 +5,7 @@
 	UserEmail nvarchar(27) NOT NULL,
 	UserPassword nvarchar(20) NOT NULL,
 	CarId int,
+	Wallet int NOT NULL,
 	PRIMARY KEY (Id)
 )
 GO

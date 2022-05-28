@@ -37,11 +37,11 @@
                     Grid.Row="1"
                     Grid.Column="1"
                     />
-                <Label
+                <Label x:Name="StoreNickname"
                     Grid.Row="2"
                     Grid.Column="1"
                     />
-                <Label
+                <Label x:Name="StoreWallet"
                     Grid.Row="4"
                     Grid.Column="1"
                     />

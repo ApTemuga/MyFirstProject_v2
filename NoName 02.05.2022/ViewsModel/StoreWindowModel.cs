@@ -41,7 +41,6 @@ namespace NoName_02._05._2022.ViewsModel
                 return changeToSellWindow ?? (changeToSellWindow = new BaseCommands(obj =>
                 {
                     WindowsBuilder.ShowSellWindow();
-                    CloseWindow();
                 }));
             }
         }
@@ -53,7 +52,6 @@ namespace NoName_02._05._2022.ViewsModel
                 return changeToBuyWindow ?? (changeToBuyWindow = new BaseCommands(obj =>
                 {
                     WindowsBuilder.ShowBuyWindow();
-                    CloseWindow();
                 }));
             }
         }

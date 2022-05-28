@@ -45,5 +45,45 @@ namespace NoName_02._05._2022
             Regex rx = new Regex(@"^((([0-9A-z]{1}[-0-9A-z\.]{0,30}[0-9A-z]?)|([0-9A-zА-я]{1}[-0-9A-zА-я\.]{0,30}[0-9A-zА-я]?))@([-A-Za-z]{1,}\.){1,}[-A-Za-z]{2,})$");
             return rx.IsMatch(emailString);
         }
+
+        public static bool CheckNameAd(string adName)
+        {
+            if (string.IsNullOrEmpty(adName))
+            {
+                return false;
+            }
+            Regex rx = new Regex(@"^[0-9A-zА-я]{3,32}$");
+            return rx.IsMatch(adName);
+        }
+
+        public static bool CheckDiscription(string discription)
+        {
+            if (string.IsNullOrEmpty(discription))
+            {
+                return false;
+            }
+            Regex rx = new Regex(@"^[0-9A-zА-я]{10,120}$");
+            return rx.IsMatch(discription);
+        }
+
+        public static bool CheckNumber(string number)
+        {
+            if (string.IsNullOrEmpty(number))
+            {
+                return false;
+            }
+            Regex rx = new Regex(@"^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$");
+            return rx.IsMatch(number);
+        }
+
+        public static bool CheckPrice(string price)
+        {
+            if (string.IsNullOrEmpty(price))
+            {
+                return false;
+            }
+            Regex rx = new Regex(@"^[0-9]{4,10}$");
+            return rx.IsMatch(price);
+        }
     }
 }

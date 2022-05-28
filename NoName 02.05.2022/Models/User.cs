@@ -14,6 +14,7 @@ namespace NoName_02._05._2022.Models
         public string Email { get; }
         public string Password { get; }
         public BitmapImage Avatar { get; }
+        public int Money { get; }
         public List<Car> Cars { get; }
 
         public User()
@@ -23,16 +24,18 @@ namespace NoName_02._05._2022.Models
             Email = "";
             Password = "";
             //Avatar = new byte[0];
+            Money = 0;
             Cars = new List<Car>(0);
         }
 
-        public User(int id, string name, string email, string password, /*BitmapImage avatar,*/ List<Car> list)
+        public User(int id, string name, string email, string password, /*BitmapImage avatar,*/ int money, List<Car> list)
         {
             Id = id;
             Name = name;
             Email = email;
             Password = password;
             //Avatar = avatar;
+            Money = money;
             Cars = list;
         }
         
